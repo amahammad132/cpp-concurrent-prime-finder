@@ -1,0 +1,3 @@
+/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/CMakeFiles/cppfastprime.dir

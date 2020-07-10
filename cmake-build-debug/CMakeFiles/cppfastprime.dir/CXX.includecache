@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amaan/CLionProjects/cppfastprime/main.cpp
+iostream
+-
+chrono
+-
+cmath
+-
+thread
+-
+vector
+-
+
