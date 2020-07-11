@@ -1,1 +1,1 @@
-/usr/bin/c++   -pthread -g   CMakeFiles/cppfastprime.dir/main.cpp.o  -o cppfastprime 
+/usr/bin/icpc   -pthread -Ofast -funroll-loops -g   CMakeFiles/cppfastprime.dir/main.cpp.o  -o cppfastprime 

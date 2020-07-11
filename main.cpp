@@ -3,12 +3,11 @@
 #include <cmath>
 #include <thread>
 #include <vector>
-#include <unistd.h>
 
 using namespace std;
 
 
-const int THREADS = 4;
+const int THREADS = 12;
 const int STARTING = 1;
 const int ENDING = 1000000;
 
@@ -22,7 +21,7 @@ bool IsPrime(int ToCheck) {
 
 
     if (ToCheck % 2 != 0) {
-        for (int i = 3; i <= floor(sqrt(ToCheck)); i += 2) {
+        for (int i = 3; i <= sqrt(ToCheck); i += 2) {
             if (ToCheck % i == 0) {
                 return false;
             }
@@ -46,9 +45,17 @@ vector<int> RangePrime(int start, int end, vector<vector<int>> &output, int subs
 }
 
 
-int main() {
+int main(int argc, char **argv) {
+#ifdef __INTEL_COMPILER
+    cout << "intel mode\n";
+#elif defined(__GNUC__)
+    cout << "gcc mode\n";
+#endif
+#pragma
     auto start = chrono::system_clock::now();
-
+//    for (int i = 0; i < argc; i++) {
+//        char *arg =
+//    }
 //    int input_start = 0;
 //    int input_end = 0;
 //    int end_val = 0;
@@ -73,8 +80,8 @@ int main() {
 //    p3.join();
 //    p4.join();
 
-    vector<vector<int>> all_primes = vector<vector<int>>(THREADS);
-
+//    vector<vector<int>> all_primes = vector<vector<int>>(THREADS);
+    vector<int> all_primes[THREADS];
 //    RangePrime(1, 250000, my_range, 0);
 //    RangePrime(250000, 500000, my_range, 1);
 //    RangePrime(500000, 750000, my_range, 2);
@@ -119,6 +126,7 @@ int main() {
         input_start += end_val + STARTING;
         input_end += end_val + interval;
 
+        if (i == THREADS - 1) input_end = ENDING;
         printf("RangePrime(%d, %d)\n", input_start, input_end);
         ThreadVector.emplace_back(thread(testfn, input_start, input_end, i));
 

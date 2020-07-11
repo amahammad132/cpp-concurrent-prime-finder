@@ -1,14 +1,14 @@
-/snap/clion/114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/amaan/CLionProjects/cppfastprime
--- The C compiler identification is GNU 9.3.0
--- The CXX compiler identification is GNU 9.3.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
+/snap/clion/114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/icc -DCMAKE_CXX_COMPILER=/usr/bin/icpc -G "CodeBlocks - Unix Makefiles" /home/amaan/CLionProjects/cppfastprime
+-- The C compiler identification is Intel 19.1.0.20200306
+-- The CXX compiler identification is Intel 19.1.0.20200306
+-- Check for working C compiler: /usr/bin/icc
+-- Check for working C compiler: /usr/bin/icc -- works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Check for working CXX compiler: /usr/bin/icpc
+-- Check for working CXX compiler: /usr/bin/icpc -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
