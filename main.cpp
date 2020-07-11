@@ -11,7 +11,7 @@
 
 using namespace std;
 
-
+// these are deprecated constants
 const int THREADS = 12;
 const int STARTING = 1;
 const int ENDING = 1000000;
@@ -119,8 +119,9 @@ int main(int argc, char **argv) {
     }
 
 //    cout << endl << "Global variable storing number of primes: " << num_of_primes << endl;
-    cout << endl << "Local variable storing number of primes: " << numeros_of_primes << endl;
-    cout << endl << "There are " << numeros_of_primes << " primes in between " << starting << " and " << ending << ".";
+//    cout << endl << "Local variable storing number of primes: " << numeros_of_primes << endl;
+    cout << endl << endl << "Number of threads used: " << threads << endl;
+    cout << "There are " << numeros_of_primes << " primes in between " << starting << " and " << ending << ".";
     cout << endl << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms\n";
     return 0;
 }
