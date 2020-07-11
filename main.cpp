@@ -66,10 +66,13 @@ int main(int argc, char **argv) {
             string arg = static_cast<string>(argv[i]);
 //            char *arg = argv[i];
             if (arg == "-r") {
-                starting = static_cast<int>(*argv[i + 1]);
-                ending = static_cast<int>(*argv[i + 2]);
+//                starting = static_cast<int>(*argv[i + 1]);
+//                ending = static_cast<int>(*argv[i + 2]);
+                sscanf(argv[i + 1], "%d", &starting);
+                sscanf(argv[i + 2], "%d", &ending);
             } else if (arg == "-t") {
-                threads = static_cast<int>(*argv[i + 1]);
+//                threads = static_cast<int>(*argv[i + 1]);
+                sscanf(argv[i + 1], "%d", &threads);
             }
         }
 
