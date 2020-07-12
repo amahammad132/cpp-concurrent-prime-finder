@@ -3,11 +3,14 @@
 #include <thread>
 #include <vector>
 #include <valarray>
+#include <sstream>
 #include "useful_functions.h"
 
 #define YELLOW "\033[33m"
 #define BLUE "\033[34m"
 #define BOLD_RED "\033[1m\033[31m"
+#define GREEN "\033[92m"
+#define CYAN "\033[96m"
 #define RESET "\033[0m"
 
 using namespace std;
@@ -21,7 +24,7 @@ int main(int argc, char **argv) {
 #ifdef __INTEL_COMPILER
     cout << BLUE << "intel compiler used" << RESET << endl;
 #elif defined(__GNUC__)
-    cout << BLUE << "gcc compiler used" << BLUE << endl;
+    cout << BLUE << "gcc compiler used" << RESET << endl;
 #endif
     auto start = chrono::system_clock::now();
 
@@ -33,14 +36,26 @@ int main(int argc, char **argv) {
         cout << BOLD_RED << "Example usage: ./program_name -t 48 -r 1 1000000" << RESET << endl;
     } else {
         for (int i = 0; i < argc; i++) {
-            string arg = static_cast<string>(argv[i]);
+            stringstream arg;
             switch (argv[i][1]) {
                 case 'r':
-                    sscanf(argv[i + 1], "%d", &starting);
-                    sscanf(argv[i + 2], "%d", &ending);
+                    arg << argv[i + 1];
+                    arg >> starting;
+                    arg << argv[i + 2];
+                    arg >> ending;
+//                    sscanf(argv[i + 1], "%d", &starting);
+//                    sscanf(argv[i + 2], "%d", &ending);
                     break;
                 case 't':
-                    sscanf(argv[i + 1], "%d", &threads);
+                    arg << argv[i + 1];
+                    arg >> threads;
+                    break;
+//                    sscanf(argv[i + 1], "%d", &threads);
+                case 'h':
+                    cout << CYAN << "Prime Checker: " << endl << "Available arguments:" << RESET << endl
+                    << GREEN << "-t N\tRuns program with N threads" << endl
+                    << "-r START STOP\tChecks primes from START to STOP" << RESET << endl;
+                    break;
             }
 //            if (arg == "-r") {
 //                sscanf(argv[i + 1], "%d", &starting);
