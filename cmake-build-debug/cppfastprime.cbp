@@ -4,7 +4,7 @@
 	<Project>
 		<Option title="cppfastprime"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="icc"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
@@ -42,19 +42,15 @@
 				<Option working_dir="/home/amaan/CLionProjects/cppfastprime/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="icc"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/pstl/include"/>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/compiler/include/icc"/>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/compiler/include"/>
 					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/include/"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j16 -f &quot;/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/Makefile&quot;  VERBOSE=1 cppfastprime"/>
@@ -68,19 +64,15 @@
 				<Option working_dir="/home/amaan/CLionProjects/cppfastprime/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="icc"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/pstl/include"/>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/compiler/include/icc"/>
-					<Add directory="/opt/intel/sw_dev_tools/compilers_and_libraries_2020.1.219/linux/compiler/include"/>
 					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/include/"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j16 -f &quot;/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/Makefile&quot;  VERBOSE=1 cppfastprime/fast"/>

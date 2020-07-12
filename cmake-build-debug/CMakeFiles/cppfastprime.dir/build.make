@@ -60,15 +60,15 @@ include CMakeFiles/cppfastprime.dir/flags.make
 CMakeFiles/cppfastprime.dir/main.cpp.o: CMakeFiles/cppfastprime.dir/flags.make
 CMakeFiles/cppfastprime.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cppfastprime.dir/main.cpp.o"
-	/usr/bin/icpc  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppfastprime.dir/main.cpp.o -c /home/amaan/CLionProjects/cppfastprime/main.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppfastprime.dir/main.cpp.o -c /home/amaan/CLionProjects/cppfastprime/main.cpp
 
 CMakeFiles/cppfastprime.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppfastprime.dir/main.cpp.i"
-	/usr/bin/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amaan/CLionProjects/cppfastprime/main.cpp > CMakeFiles/cppfastprime.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amaan/CLionProjects/cppfastprime/main.cpp > CMakeFiles/cppfastprime.dir/main.cpp.i
 
 CMakeFiles/cppfastprime.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppfastprime.dir/main.cpp.s"
-	/usr/bin/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amaan/CLionProjects/cppfastprime/main.cpp -o CMakeFiles/cppfastprime.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amaan/CLionProjects/cppfastprime/main.cpp -o CMakeFiles/cppfastprime.dir/main.cpp.s
 
 # Object files for target cppfastprime
 cppfastprime_OBJECTS = \

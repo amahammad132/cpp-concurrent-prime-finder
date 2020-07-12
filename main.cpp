@@ -2,7 +2,6 @@
 #include <chrono>
 #include <thread>
 #include <vector>
-#include <valarray>
 #include <sstream>
 #include "useful_functions.h"
 
@@ -39,22 +38,24 @@ int main(int argc, char **argv) {
             stringstream arg;
             switch (argv[i][1]) {
                 case 'r':
-                    arg << argv[i + 1];
-                    arg >> starting;
-                    arg << argv[i + 2];
-                    arg >> ending;
-//                    sscanf(argv[i + 1], "%d", &starting);
-//                    sscanf(argv[i + 2], "%d", &ending);
+//                    arg << argv[i + 1];
+//                    arg >> starting;
+//                    stringstream arg2;
+//                    arg2 << argv[i + 2];
+//                    arg2 >> ending;
+//                    arg << argv[i + 2];
+//                    arg >> ending;
+                    sscanf(argv[i + 1], "%d", &starting);
+                    sscanf(argv[i + 2], "%d", &ending);
                     break;
                 case 't':
-                    arg << argv[i + 1];
-                    arg >> threads;
+//                    arg << argv[i + 1];
+//                    arg >> threads;
+                    sscanf(argv[i + 1], "%d", &threads);
+//                    threads = strtol(argv[i + 1], &threads, 10);
                     break;
-//                    sscanf(argv[i + 1], "%d", &threads);
                 case 'h':
-                    cout << CYAN << "Prime Checker: " << endl << "Available arguments:" << RESET << endl
-                    << GREEN << "-t N\tRuns program with N threads" << endl
-                    << "-r START STOP\tChecks primes from START to STOP" << RESET << endl;
+                    show_help();
                     break;
             }
 //            if (arg == "-r") {
@@ -101,7 +102,7 @@ int main(int argc, char **argv) {
         cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
         ThreadVector.emplace_back(thread(testfn, input_start, input_end, i));
 
-        input_start = input_end;
+        input_start = input_end + 1;
     }
 
     for (auto& t : ThreadVector) {
