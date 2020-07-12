@@ -1,8 +1,9 @@
 #include <iostream>
 #include <chrono>
-#include <cmath>
 #include <thread>
 #include <vector>
+#include <valarray>
+#include "useful_functions.h"
 
 #define YELLOW "\033[33m"
 #define BLUE "\033[34m"
@@ -15,37 +16,6 @@ using namespace std;
 const int THREADS = 12;
 const int STARTING = 1;
 const int ENDING = 1000000;
-
-bool IsPrime(int ToCheck) {
-    if (ToCheck == 2) {
-        return true;
-    }
-    if (ToCheck < 2) {
-        return false;
-    }
-
-    if (ToCheck % 2 != 0) {
-        for (int i = 3; i <= sqrt(ToCheck); i += 2) {
-            if (ToCheck % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    } else {
-        return false;
-    }
-}
-
-vector<int> RangePrime(int start, int end, vector<vector<int>>& output, int subsection) {
-    vector<int> test;
-    for (int i = start; i < end; i++) {
-        if (IsPrime(i)) {
-            test.push_back(i);
-        }
-    }
-    output[subsection] = test;
-    return test;
-}
 
 int main(int argc, char **argv) {
 #ifdef __INTEL_COMPILER
@@ -64,16 +34,20 @@ int main(int argc, char **argv) {
     } else {
         for (int i = 0; i < argc; i++) {
             string arg = static_cast<string>(argv[i]);
-//            char *arg = argv[i];
-            if (arg == "-r") {
-//                starting = static_cast<int>(*argv[i + 1]);
-//                ending = static_cast<int>(*argv[i + 2]);
-                sscanf(argv[i + 1], "%d", &starting);
-                sscanf(argv[i + 2], "%d", &ending);
-            } else if (arg == "-t") {
-//                threads = static_cast<int>(*argv[i + 1]);
-                sscanf(argv[i + 1], "%d", &threads);
+            switch (argv[i][1]) {
+                case 'r':
+                    sscanf(argv[i + 1], "%d", &starting);
+                    sscanf(argv[i + 2], "%d", &ending);
+                    break;
+                case 't':
+                    sscanf(argv[i + 1], "%d", &threads);
             }
+//            if (arg == "-r") {
+//                sscanf(argv[i + 1], "%d", &starting);
+//                sscanf(argv[i + 2], "%d", &ending);
+//            } else if (arg == "-t") {
+//                sscanf(argv[i + 1], "%d", &threads);
+//            }
         }
 
     }
@@ -88,13 +62,25 @@ int main(int argc, char **argv) {
     };
 
     vector<thread> ThreadVector;
-    int input_start = 0;
-    int input_end = 0;
-    int end_val = 0;
-    int interval = (ending - starting) / threads;
-    for (int i = 0; i < threads; i++) {
+//    int input_start = 0;
+//    int input_end = 0;
+//    int end_val = 0;
+//    int interval = (ending - starting) / threads;
+    /*for (int i = 0; i < threads; i++) {
         input_start += end_val + starting;
         input_end += end_val + interval;
+
+        if (i == threads - 1) input_end = ending;
+        cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
+        ThreadVector.emplace_back(thread(testfn, input_start, input_end, i));
+
+        input_start = input_end;
+    }*/
+    int input_start = starting;
+    int input_end;
+    int interval = (ending - starting) / threads;
+    for (int i = 0; i < threads; i++) {
+        input_end = input_start + interval;
 
         if (i == threads - 1) input_end = ending;
         cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
@@ -113,7 +99,7 @@ int main(int argc, char **argv) {
         cout << endl << "thread #" << index + 1 << " -> ";
         numeros_of_primes += section.size();
         for (const auto prime : section) {
-            cout << prime << ' ';
+            cout << prime << ", ";
         }
         index++;
     }

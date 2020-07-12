@@ -93,6 +93,9 @@
 		<Unit filename="/home/amaan/CLionProjects/cppfastprime/main.cpp">
 			<Option target="cppfastprime"/>
 		</Unit>
+		<Unit filename="/home/amaan/CLionProjects/cppfastprime/useful_functions.h">
+			<Option target="cppfastprime"/>
+		</Unit>
 		<Unit filename="/home/amaan/CLionProjects/cppfastprime/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
