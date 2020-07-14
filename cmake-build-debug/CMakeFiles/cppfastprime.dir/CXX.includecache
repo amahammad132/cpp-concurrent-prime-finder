@@ -15,8 +15,6 @@ thread
 -
 vector
 -
-valarray
--
 sstream
 -
 useful_functions.h

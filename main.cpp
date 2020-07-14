@@ -11,6 +11,7 @@
 #define GREEN "\033[92m"
 #define CYAN "\033[96m"
 #define RESET "\033[0m"
+#define RED "\033[31m"
 
 using namespace std;
 
@@ -69,7 +70,7 @@ int main(int argc, char **argv) {
     }
 
     vector<int> all_primes[threads];
-    auto testfn = [&](int start, int stop, int idx) {
+    auto RangePrime = [&](int start, int stop, int idx) {
         for (int i = start; i <= stop; i++) {
             if (IsPrime(i)) {
                 all_primes[idx].push_back(i);
@@ -78,11 +79,12 @@ int main(int argc, char **argv) {
     };
 
     vector<thread> ThreadVector;
-//    int input_start = 0;
-//    int input_end = 0;
-//    int end_val = 0;
-//    int interval = (ending - starting) / threads;
-    /*for (int i = 0; i < threads; i++) {
+    /*
+    int input_start = 0;
+    int input_end = 0;
+    int end_val = 0;
+    int interval = (ending - starting) / threads;
+    for (int i = 0; i < threads; i++) {
         input_start += end_val + starting;
         input_end += end_val + interval;
 
@@ -100,7 +102,7 @@ int main(int argc, char **argv) {
 
         if (i == threads - 1) input_end = ending;
         cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
-        ThreadVector.emplace_back(thread(testfn, input_start, input_end, i));
+        ThreadVector.emplace_back(thread(RangePrime, input_start, input_end, i));
 
         input_start = input_end + 1;
     }
@@ -123,7 +125,7 @@ int main(int argc, char **argv) {
 //    cout << endl << "Global variable storing number of primes: " << num_of_primes << endl;
 //    cout << endl << "Local variable storing number of primes: " << numeros_of_primes << endl;
     cout << endl << endl << "Number of threads used: " << threads << endl;
-    cout << "There are " << numeros_of_primes << " primes in between " << starting << " and " << ending << ".";
-    cout << endl << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms\n";
+    cout << "There are " << RED << numeros_of_primes << RESET << " primes in between " << starting << " and " << ending << "." << endl;
+    cout << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms" << endl;
     return 0;
 }
