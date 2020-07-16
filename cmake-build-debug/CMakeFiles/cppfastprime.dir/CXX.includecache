@@ -57,8 +57,6 @@ QtCore/QTextStream
 /home/amaan/CLionProjects/cppfastprime/useful_functions.h
 cmath
 -
-vector
--
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 qstring.h
