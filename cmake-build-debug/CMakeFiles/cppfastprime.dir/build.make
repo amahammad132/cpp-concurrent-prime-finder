@@ -79,6 +79,9 @@ cppfastprime_EXTERNAL_OBJECTS =
 
 cppfastprime: CMakeFiles/cppfastprime.dir/main.cpp.o
 cppfastprime: CMakeFiles/cppfastprime.dir/build.make
+cppfastprime: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
+cppfastprime: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
+cppfastprime: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 cppfastprime: CMakeFiles/cppfastprime.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amaan/CLionProjects/cppfastprime/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cppfastprime"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cppfastprime.dir/link.txt --verbose=$(VERBOSE)
