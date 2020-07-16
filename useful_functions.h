@@ -24,20 +24,3 @@ bool IsPrime(int ToCheck) {
         return false;
     }
 }
-
-//std::vector<int> RangePrime(int start, int end, std::vector<std::vector<int>>& output, int subsection) {
-//    std::vector<int> test;
-//    for (int i = start; i < end; i++) {
-//        if (IsPrime(i)) {
-//            test.push_back(i);
-//        }
-//    }
-//    output[subsection] = test;
-//    return test;
-//}
-
-void show_help() {
-    std::cout << CYAN << "Prime Checker: " << std::endl << "Available arguments:" << RESET << std::endl
-         << GREEN << "-t N\tRuns program with N threads" << std::endl
-         << "-r START STOP\tChecks primes from START to STOP" << RESET << std::endl;
-}

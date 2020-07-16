@@ -4,6 +4,7 @@
 CMakeFiles/cppfastprime.dir/main.cpp.o: ../main.cpp
 CMakeFiles/cppfastprime.dir/main.cpp.o: ../qt_parts.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: ../useful_functions.h
+CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
@@ -118,10 +119,12 @@ CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidg
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QInputDialog
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLCDNumber
+CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSlider
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit
+CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
@@ -133,6 +136,7 @@ CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidg
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qinputdialog.h
+CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
 CMakeFiles/cppfastprime.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlcdnumber.h

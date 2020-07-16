@@ -37,11 +37,19 @@ QSlider
 -
 QWidget
 -
+string
+-
+QLabel
+-
+QString
+-
 QLineEdit
 -
 QTextEdit
 -
 QInputDialog
+-
+QVBoxLayout
 -
 QtCore/QTextStream
 -
@@ -51,6 +59,10 @@ cmath
 -
 vector
 -
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QString
+qstring.h
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
 qtextstream.h
@@ -1170,6 +1182,10 @@ qinputdialog.h
 qlcdnumber.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlcdnumber.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
+qlabel.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 qlineedit.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
@@ -1185,6 +1201,10 @@ qslider.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit
 qtextedit.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtextedit.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout
+qboxlayout.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
 qwidget.h
@@ -1276,6 +1296,12 @@ QtCore/qstring.h
 QtWidgets/qlineedit.h
 -
 QtWidgets/qdialog.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
