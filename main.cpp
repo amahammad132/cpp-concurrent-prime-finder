@@ -99,21 +99,21 @@ int main(int argc, char **argv) {
     int interval = (ending - starting) / threads;
     for (int i = 0; i < threads; i++) {
         input_end = input_start + interval;
-
         if (i == threads - 1) input_end = ending;
+
         cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
         ThreadVector.emplace_back(thread(RangePrime, input_start, input_end, i));
 
         input_start = input_end + 1;
     }
 
-    for (auto& t : ThreadVector) {
+    for (auto &t : ThreadVector) {
         t.join();
     }
 
     int numeros_of_primes = 0;
     int index = 0;
-    for (const auto& section : all_primes) {
+    for (const auto &section : all_primes) {
         cout << endl << "thread #" << index + 1 << " -> ";
         numeros_of_primes += section.size();
         for (const auto prime : section) {
@@ -125,7 +125,7 @@ int main(int argc, char **argv) {
 //    cout << endl << "Global variable storing number of primes: " << num_of_primes << endl;
 //    cout << endl << "Local variable storing number of primes: " << numeros_of_primes << endl;
     cout << endl << endl << "Number of threads used: " << threads << endl;
-    cout << "There are " << RED << numeros_of_primes << RESET << " primes in between " << starting << " and " << ending << "." << endl;
+    cout << "There are " << RED << numeros_of_primes << RESET << " primes between " << starting << " and " << ending << "." << endl;
     cout << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms" << endl;
     return 0;
 }
