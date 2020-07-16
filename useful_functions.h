@@ -1,9 +1,4 @@
 #include <cmath>
-#include <vector>
-
-#define GREEN "\033[92m"
-#define CYAN "\033[96m"
-#define RESET "\033[0m"
 
 bool IsPrime(int ToCheck) {
     if (ToCheck == 2) {

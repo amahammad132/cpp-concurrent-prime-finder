@@ -16,9 +16,9 @@ int main(int argc, char **argv) {
     QApplication app(argc, argv);
     MyWidget widget;
 
-    int threads = widget.input.threads;
-    int starting = widget.input.start;
-    int ending = widget.input.end;
+    int threads = widget.inputBox.threads;
+    int starting = widget.inputBox.start;
+    int ending = widget.inputBox.end;
 
     auto start = chrono::system_clock::now();
 
@@ -55,17 +55,19 @@ int main(int argc, char **argv) {
     for (const auto &section : all_primes) {
         for (const auto prime : section) {
             cout << prime << "," << endl;
-            widget.primeOutputBox.addItem(prime);
+            widget.outputBox.addItem(prime);
         }
         numeros_of_primes += section.size();
         index++;
     }
 
-    widget.primeOutputBox.setToFullOutput();
 
     cout << endl << endl << "Number of threads used: " << threads << endl;
     cout << "There are " << RED << numeros_of_primes << RESET << " primes between " << starting << " and " << ending << "." << endl;
     cout << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms" << endl;
+
+    widget.outputBox.outputPrimes.setWindowTitle(QString::fromStdString("There are " + to_string(numeros_of_primes) + " primes between " + to_string(starting) + " and " + to_string(ending) + "."));
+    widget.outputBox.outputPrimes.show();
 
     return QApplication::exec();
 }

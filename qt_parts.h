@@ -36,27 +36,23 @@ public:
 
 class PrimeOutputBox : QTextEdit {
 public:
-    QString items_to_show = "";
+    QTextEdit outputPrimes;
 
-    PrimeOutputBox() = default;
+    PrimeOutputBox() {
+        outputPrimes.setFontPointSize(18);
+        outputPrimes.setReadOnly(true);
+        outputPrimes.resize(500, 500);
+    };
 
     void addItem(int item) {
-        items_to_show.append(QString::fromStdString(std::to_string(item) + "\n"));
-    }
-
-    void setToFullOutput() const {
-        auto outputPrimes = new QTextEdit();
-        outputPrimes->setFontPointSize(18);
-        outputPrimes->setText(items_to_show);
-        outputPrimes->setReadOnly(true);
-        outputPrimes->show();
+        outputPrimes.append(QString::fromStdString(std::to_string(item) + ","));
     }
 };
 
 class MyWidget : public QWidget {
 public:
-    TextInput input;
-    PrimeOutputBox primeOutputBox;
+    TextInput inputBox;
+    PrimeOutputBox outputBox;
 
     MyWidget() = default;
 };
