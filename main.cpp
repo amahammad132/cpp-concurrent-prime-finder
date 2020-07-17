@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
     vector<thread> ThreadVector;
     int input_start = starting;
     int input_end;
-    int interval = (ending - starting) / threads;
+    int interval = (ending - starting) / threads + 6500;
     for (int i = 0; i < threads; i++) {
         input_end = input_start + interval;
         if (i == threads - 1) input_end = ending;
@@ -63,10 +63,14 @@ int main(int argc, char **argv) {
         ThreadVector.emplace_back(thread(RangePrime, input_start, input_end, i));
 
         input_start = input_end + 1;
+        interval -= 14000 / threads;
+        cout << "Thread " << i + 1 << " = " << interval << endl;
     }
 
     for (auto &t : ThreadVector) {
-        t.join();
+        if (t.joinable()) {
+            t.join();
+        }
     }
 
     int numeros_of_primes = 0;
