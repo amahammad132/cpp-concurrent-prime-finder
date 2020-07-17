@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     int starting = widget.inputBox.start;
     int ending = widget.inputBox.end;
 
-    auto start = chrono::system_clock::now();
+    auto starting_time = chrono::system_clock::now();
 
 
     vector<int> all_primes[threads];
@@ -35,11 +35,13 @@ int main(int argc, char **argv) {
     vector<thread> ThreadVector;
     int input_start = starting;
     int input_end;
-    int interval = (ending - starting) / threads;
     for (int i = 0; i < threads; i++) {
-        input_end = input_start + interval;
-        if (i == threads - 1) input_end = ending;
+        //TODO Make interval nonlinear
+        int interval = (ending - starting) / threads;
 
+        input_end = input_start + interval;
+
+        if (i == threads - 1) input_end = ending;
         cout << YELLOW << "RangePrime(" << input_start << ", " << input_end << ")" << RESET << endl;
         ThreadVector.emplace_back(thread(RangePrime, input_start, input_end, i));
 
@@ -61,12 +63,12 @@ int main(int argc, char **argv) {
         index++;
     }
 
-
+    auto ending_time = chrono::system_clock::now();
+    auto time_taken = chrono::duration_cast<chrono::milliseconds>(ending_time - starting_time).count();
     cout << endl << endl << "Number of threads used: " << threads << endl;
     cout << "There are " << RED << numeros_of_primes << RESET << " primes between " << starting << " and " << ending << "." << endl;
-    cout << "elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << "ms" << endl;
-
-    widget.outputBox.outputPrimes.setWindowTitle(QString::fromStdString("There are " + to_string(numeros_of_primes) + " primes between " + to_string(starting) + " and " + to_string(ending) + "."));
+    cout << "elapsed time: " << time_taken << "ms" << endl;
+    widget.outputBox.outputPrimes.setWindowTitle(QString::fromStdString("There are " + to_string(numeros_of_primes) + " primes between " + to_string(starting) + " and " + to_string(ending) + ". Time taken: " + to_string(time_taken)));
     widget.outputBox.outputPrimes.show();
 
     return QApplication::exec();
