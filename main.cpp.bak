@@ -1,10 +1,8 @@
-//#define FMT_HEADER_ONLY
 #include <iostream>
 #include <chrono>
 #include <thread>
 #include <vector>
 #include "useful_functions.h"
-//#include <fmt/format.h>
 
 #define YELLOW "\033[33m"
 #define BOLD_RED "\033[1m\033[31m"
@@ -14,13 +12,13 @@
 #define RED "\033[31m"
 
 using namespace std;
-using namespace fmt;
 
 int main(int argc, char **argv) {
     auto starting_time = chrono::high_resolution_clock::now();
+
     int starting = 1;
     int ending = 1000000;
-    int threads = 48;
+    int threads = 12;
 
     if (argc == 1) {
         cout << BOLD_RED << "Example usage: ./program_name -t 48 -r 1 1000000" << RESET << endl;
@@ -69,9 +67,8 @@ int main(int argc, char **argv) {
     for (auto &t : ThreadVector) {
         if (t.joinable()) {
             auto current_time = chrono::duration<double, milli>(chrono::high_resolution_clock::now() - starting_time).count();
-//            cout << "Thread " << thr << " finished at " << RED
-//            << current_time << RESET << "ms" << endl;
-            cout << thr << RED << " " << current_time << RESET << endl;
+            cout << "Thread " << thr << " finished at " << RED
+            << current_time << RESET << "ms" << endl;
             time_taken[thr] = current_time;
 
             t.join();

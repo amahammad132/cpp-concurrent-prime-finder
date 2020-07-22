@@ -5,6 +5,17 @@
 #define CYAN "\033[96m"
 #define RESET "\033[0m"
 
+class Human {
+public:
+    bool gender;
+    double age;
+
+    Human(bool gender, double age) {
+        this->gender = gender;
+        this->age = age;
+    }
+};
+
 bool IsPrime(int ToCheck) {
     if (ToCheck == 2) {
         return true;
